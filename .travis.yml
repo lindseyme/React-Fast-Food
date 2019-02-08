@@ -5,3 +5,5 @@ install:
   - yarn
 script:
   - yarn test -u --coverage
+after_script:
+  - yarn run coveralls
