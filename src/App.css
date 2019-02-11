@@ -1,3 +1,70 @@
 * {
   box-sizing: border-box;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8em;
+  margin: 0;
+  padding: 30px;
+  box-shadow: 0 5px 20px lightgray;
+  border-bottom: 4px solid lightgreen;
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  color: black;
+  margin: 0;
+  background: #f6f6f6;
+  /* background-image: url(./images/food.jpg);  */
+}
+
+form {
+  width: 40%;
+  margin: auto;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid lightgreen;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid lightgreen;
+  color: black;
+  font-size: 1em;
+  margin: 4px 0;
+  width: 100%;
+}
+
+input[type=submit] {
+  color: white;
+  background: green;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+}
+
+input[type=submit]:hover {
+  /* box-shadow: 0 0 20px lightblue; */
+  background: darkgreen;
+}
+
+.signup-header {
+  font-weight: bold;
+  text-align: left;
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1050px) {
+  form{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  form{
+    width: 100%;
+  }
 }
