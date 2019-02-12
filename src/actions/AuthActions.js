@@ -14,7 +14,6 @@ export const registerUser = (userData, history) => dispatch => {
   })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       if (data.status === "failed") {
         toast.error(data.message);
       } else {
