@@ -14,14 +14,11 @@ export const registerUser = (userData, history) => dispatch => {
   })
     .then(res => res.json())
     .then(data => {
+      console.log(data)
       if (data.status === "failed") {
         toast.error(data.message);
-        dispatch({
-          type: GET_ERRORS,
-          payload: data
-        });
       } else {
-        history.push("/login");
+        history.push("/");
       }
     });
 };
@@ -40,7 +37,7 @@ export const loginUser = (userData, history) => dispatch => {
       if (data.status === "failed") {
         return dispatch({
           type: GET_ERRORS,
-          payload: data.errors
+          payload: data.message
         });
       } else {
         let token = data.auth_token;

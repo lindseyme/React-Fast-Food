@@ -8,3 +8,12 @@ export default function(state = initialState, action) {
       return state;
   }
 }
+
+export function errors(state = { Email: "", password: "" }, action) {
+  switch (action.type) {
+    case "GET_ERRORS":
+      return { Email: action.payload, password: action.password };
+    default:
+      return state;
+  }
+}

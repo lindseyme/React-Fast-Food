@@ -54,6 +54,9 @@ export class Login extends Component {
                 </p>
                 <p className="signup-header"> LOGIN </p>
                 <div className="form-group">
+                {errors.Email && (
+                    <div className="invalid-feedback">{errors.Email}</div>
+                  )}
                   <input
                     type="email"
                     className={classnames("form-control form-control-lg", {
@@ -64,9 +67,6 @@ export class Login extends Component {
                     value={this.state.email}
                     onChange={this.onChange}
                   />
-                  {errors.Email && (
-                    <div className="invalid-feedback">{errors.Email}</div>
-                  )}
                 </div>
                 <div className="form-group">
                   <input
