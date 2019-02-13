@@ -41,6 +41,7 @@ export class Login extends Component {
     const { errors } = this.state;
 
     return (
+      <div className="wrapper">
       <section id="register" className="flex-grow-1">
         <div className="container">
           <div className="row">
@@ -97,6 +98,7 @@ export class Login extends Component {
           </div>
         </div>
       </section>
+      </div>
     );
   }
 }

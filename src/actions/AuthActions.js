@@ -41,8 +41,7 @@ export const loginUser = (userData, history) => dispatch => {
       } else {
         let token = data.auth_token;
         localStorage.setItem('token', token);
-        // dispatch({ type: LOGIN_SUCCESS });
-        history.push('/menu');
+        window.location = '/menu';
         return true;
       }
     });
