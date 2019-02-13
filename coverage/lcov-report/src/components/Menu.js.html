@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70.59% </span>
+        <span class="strong">68.42% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/17</span>
+        <span class='fraction'>13/19</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">57.14% </span>
+        <span class="strong">55.56% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/7</span>
+        <span class='fraction'>5/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">72.22% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/16</span>
+        <span class='fraction'>13/18</span>
       </div>
     </div>
     <p class="quiet">
@@ -196,7 +196,23 @@
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
 <a name='L150'></a><a href='#L150'>150</a>
-<a name='L151'></a><a href='#L151'>151</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,6 +232,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -268,6 +289,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -338,6 +367,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -352,6 +382,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { menuPage } from "../actions/MenuActions";
 import { withRouter, Link } from "react-router-dom";
+import "./Menu.css";
 &nbsp;
 export class Menu extends Component {
   constructor(props) {
@@ -367,6 +398,11 @@ export class Menu extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+&nbsp;
+  componentDidMount() {
+    this.props.menuPage();
+  }
+&nbsp;
 <span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(nextProps) {
 <span class="cstat-no" title="statement not covered" >    if (nextProps.errors) {</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({ errors: nextProps.errors });</span>
@@ -423,11 +459,19 @@ export class Menu extends Component {
             &lt;h1&gt;Menu - All Categories&lt;/h1&gt;
 &nbsp;
             &lt;hr /&gt;
-            &lt;div id="items-list" /&gt;
+            &lt;div id="items"&gt;
+              {this.props.menu.map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; (
+<span class="cstat-no" title="statement not covered" >                &lt;div key={item.item_id} id="item"&gt;</span>
+                  &lt;p&gt;{item.item_name}&lt;/p&gt;
+                  &lt;p&gt;Our Price: {item.price}&lt;/p&gt;
+                  &lt;button&gt;Order Now&lt;/button&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
           &lt;/center&gt;
         &lt;/div&gt;
 &nbsp;
-        &lt;div id="simpleModal" className="modal"&gt;
+        {/* &lt;div id="simpleModal" className="modal"&gt;
           &lt;div className="modal-content"&gt;
             &lt;div className="modal-header"&gt;
               &lt;span className="closeBtn"&gt;&amp;times;&lt;/span&gt;
@@ -476,7 +520,7 @@ export class Menu extends Component {
               &lt;button&gt;Submit order&lt;/button&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;/div&gt; */}
       &lt;/React.Fragment&gt;
     );
   }
@@ -489,7 +533,8 @@ Menu.propType = {
 };
 const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
   message: state.message,
-  errors: state.errors
+  errors: state.errors,
+  menu: state.menu
 });
 &nbsp;
 export default connect(
@@ -502,7 +547,7 @@ export default connect(
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 13 2019 17:35:24 GMT+0300 (East Africa Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 13 2019 18:27:40 GMT+0300 (East Africa Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

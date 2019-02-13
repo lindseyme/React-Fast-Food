@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { menuPage } from "../actions/MenuActions";
 import { withRouter, Link } from "react-router-dom";
+import "./Menu.css";
 
 export class Menu extends Component {
   constructor(props) {
@@ -19,6 +20,11 @@ export class Menu extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentDidMount() {
+    this.props.menuPage();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
@@ -75,11 +81,19 @@ export class Menu extends Component {
             <h1>Menu - All Categories</h1>
 
             <hr />
-            <div id="items-list" />
+            <div id="items">
+              {this.props.menu.map(item => (
+                <div key={item.item_id} id="item">
+                  <p>{item.item_name}</p>
+                  <p>Our Price: {item.price}</p>
+                  <button>Order Now</button>
+                </div>
+              ))}
+            </div>
           </center>
         </div>
 
-        <div id="simpleModal" className="modal">
+        {/* <div id="simpleModal" className="modal">
           <div className="modal-content">
             <div className="modal-header">
               <span className="closeBtn">&times;</span>
@@ -128,7 +142,7 @@ export class Menu extends Component {
               <button>Submit order</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
@@ -141,7 +155,8 @@ Menu.propType = {
 };
 const mapStateToProps = state => ({
   message: state.message,
-  errors: state.errors
+  errors: state.errors,
+  menu: state.menu
 });
 
 export default connect(

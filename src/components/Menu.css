@@ -1,0 +1,13 @@
+#item {
+  width: 30%;
+  border: 1px solid black;
+  margin: 10px auto;
+  border-radius: 16px;
+}
+
+#item button {
+  padding: 8px;
+  margin-bottom: 7px;
+  background: green;
+  color: white;
+}
