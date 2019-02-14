@@ -1,10 +1,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Enzyme from "enzyme";
-import EnzymeAdapter from "enzyme-adapter-react-16";
 import { Menu } from "../components/Menu";
+import './BaseTest';
 
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 const props = {
   menu: []
 };

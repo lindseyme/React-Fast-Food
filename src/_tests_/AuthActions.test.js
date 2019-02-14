@@ -1,5 +1,4 @@
 import { loginUser, registerUser } from "../actions/AuthActions";
-import { createMemoryHistory } from "history";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import fetchMock from "fetch-mock";
