@@ -305,11 +305,16 @@ border-bottom: 4px solid lightgreen;
 background: #f6f6f6;
 /* margin-bottom: 50px; */
 }
-/* @-o-viewport{
-zoom: 1;
-width: extend-to-zoom;
+#item {
+  width: 30%;
+  border: 1px solid black;
+  margin: 10px auto;
+  border-radius: 16px;
 }
-@-ms-viewport{
-zoom: 1;
-width: extend-to-zoom;
-} */
+
+#item button {
+  padding: 8px;
+  margin-bottom: 7px;
+  background: green;
+  color: white;
+}

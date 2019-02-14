@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-//import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { menuPage } from "../actions/MenuActions";
 import { withRouter, Link } from "react-router-dom";
-import "./Menu.css";
 
 export class Menu extends Component {
   constructor(props) {
